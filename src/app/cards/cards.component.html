@@ -14,7 +14,7 @@
           Confirmed
         </div>
         <div class="card-body">
-          <p class="card-text">{{ confirmed }}</p>
+          <p class="card-text" [countUp]="confirmed">0</p>
           <p class="card-text">Last Update: {{ update }}</p>
           <p class="card-text">Number of Active cases of COVID-19</p>
         </div>
@@ -26,7 +26,7 @@
           Recovered
         </div>
         <div class="card-body">
-          <p class="card-text">{{ recovered }}</p>
+          <p class="card-text"[countUp]="recovered">0</p>
           <p class="card-text"> {{ recoveredPer }}% Recovery Rate</p>
           <p class="card-text">Number of recoveries from COVID-19</p>
         </div>
@@ -38,7 +38,7 @@
           Deaths
         </div>
         <div class="card-body">
-          <p class="card-text">{{ deaths }}</p>
+          <p class="card-text" [countUp]="deaths">0</p>
           <p class="card-text"> {{ deathsPer }}% Fatality Rate</p>
           <p class="card-text">Number of Deaths caused by COVID-19</p>
         </div>

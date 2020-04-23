@@ -6,6 +6,7 @@ import { StatsComponent } from './stats/stats.component';
 import { StatsService } from './stats/stats.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './cards/cards.component';
+import { CountUpModule } from 'ngx-countup';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CardsComponent } from './cards/cards.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    CountUpModule
   ],
   providers: [StatsService],
   bootstrap: [AppComponent]
