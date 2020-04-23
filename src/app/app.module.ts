@@ -7,6 +7,7 @@ import { StatsService } from './stats/stats.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './cards/cards.component';
 import { CountUpModule } from 'ngx-countup';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CountUpModule } from 'ngx-countup';
   imports: [
     BrowserModule,
     HttpClientModule,
-    CountUpModule
+    CountUpModule,
+    ChartsModule
   ],
   providers: [StatsService],
   bootstrap: [AppComponent]

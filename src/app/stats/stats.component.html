@@ -3,20 +3,25 @@
     <div class="col-md-12 text-center">
       <h1>Countries</h1>
 
-      <select (change)='onChange($event.target.value)' name="" id="">
+      <select class="mb-5 mt-3" (change)='onChange($event.target.value)' name="" id="">
         <option  value="choose">Chose a Country</option>
         <option *ngFor="let country of countries" value="{{ country.name }}">{{ country.name }}</option>
       </select>
 
-      <div *ngIf='countryChosen'>
-        <h1>Confirmed</h1>
-        <p> {{ countryChosen.confirmed.value }}</p>
-        <h1>Recovered</h1>
-        <p> {{ countryChosen.recovered.value }}</p>
-        <h1>Deaths</h1>
-        <p> {{ countryChosen.deaths.value }}</p>
-      </div>
-
     </div>
   </div>
+  <div *ngIf='countryChosen' style="display: block;">
+    <canvas baseChart
+      [datasets]="barChartData"
+      [labels]="barChartLabels"
+      [options]="barChartOptions"
+      [plugins]="barChartPlugins"
+      [legend]="barChartLegend"
+      [chartType]="barChartType"
+      [colors]="barChartColors">
+    </canvas>
+  </div>
+
 </div>
+
+
