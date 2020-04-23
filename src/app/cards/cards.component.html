@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center mb-5 mt-5">
+      <img src="../../assets/images/covid.png" class="img-fluid" alt="Covid-19">
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class=" text-center card-header text-white bg-primary">
+          Confirmed
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ confirmed }}</p>
+          <p class="card-text">Last Update: {{ update }}</p>
+          <p class="card-text">Number of Active cases of COVID-19</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-header text-center text-white bg-success">
+          Recovered
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ recovered }}</p>
+          <p class="card-text"> {{ recoveredPer }}% Recovery Rate</p>
+          <p class="card-text">Number of recoveries from COVID-19</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-header text-center text-white bg-danger">
+          Deaths
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{ deaths }}</p>
+          <p class="card-text"> {{ deathsPer }}% Fatality Rate</p>
+          <p class="card-text">Number of Deaths caused by COVID-19</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
