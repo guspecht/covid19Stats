@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './cards/cards.component';
 import { CountUpModule } from 'ngx-countup';
 import { ChartsModule } from 'ng2-charts';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatsComponent,
-    CardsComponent
+    CardsComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

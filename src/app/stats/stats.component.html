@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container-fluid mt-5 mb-5">
   <div class="row">
     <div class="col-md-12 text-center">
       <h1>Countries</h1>
@@ -10,17 +10,28 @@
 
     </div>
   </div>
-  <div *ngIf='countryChosen' style="display: block;">
-    <canvas baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [plugins]="barChartPlugins"
-      [legend]="barChartLegend"
-      [chartType]="barChartType"
-      [colors]="barChartColors">
-    </canvas>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div *ngIf='countryChosen' style="display: block;">
+        <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType"
+          [colors]="barChartColors">
+        </canvas>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <app-map *ngIf='countryChosen'></app-map>
+    </div>
   </div>
+
+
+
 
 </div>
 

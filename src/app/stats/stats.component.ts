@@ -44,22 +44,27 @@ export class StatsComponent implements OnInit {
     .subscribe(AllCountries => {
       // console.log(AllCountries.countries)
       this.countries = AllCountries.countries;
+
     })
   }
 
 
   onChange(countryName:String){
     if(!(countryName === "choose")){
-
       this.statsService.getCountryInfo(countryName)
       .subscribe(countryData => {
         this.countryChosen = countryData;
+        this.statsService.countryInfo.emit(this.countryChosen);
 
         this.barChartData = [
           { data: [countryData.confirmed.value], label: 'Confirmed' },
           { data: [countryData.recovered.value], label: 'Recovered' },
           { data: [countryData.deaths.value], label: 'Deaths' }
         ];
+        this.statsService.getLatLong()
+        .subscribe(data => {
+          this.statsService.countryLatLong.emit(data.countries.find( country => country.name == countryName));
+        })
       })
     }
   }
