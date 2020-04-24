@@ -35,6 +35,8 @@ export class StatsComponent implements OnInit {
 
   countries: [];
 
+
+
   constructor( private statsService: StatsService) { }
 
 
@@ -44,7 +46,6 @@ export class StatsComponent implements OnInit {
     .subscribe(AllCountries => {
       // console.log(AllCountries.countries)
       this.countries = AllCountries.countries;
-
     })
   }
 
@@ -61,11 +62,17 @@ export class StatsComponent implements OnInit {
           { data: [countryData.recovered.value], label: 'Recovered' },
           { data: [countryData.deaths.value], label: 'Deaths' }
         ];
+
         this.statsService.getLatLong()
         .subscribe(data => {
+          if(countryName == "Taiwan*"){
+            countryName = "Taiwan";
+          }
           this.statsService.countryLatLong.emit(data.countries.find( country => country.name == countryName));
         })
+
       })
+
     }
   }
 }

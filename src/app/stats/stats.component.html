@@ -14,7 +14,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
       <div *ngIf='countryChosen' style="display: block;">
         <canvas baseChart
           [datasets]="barChartData"
@@ -27,7 +27,7 @@
         </canvas>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
       <app-map *ngIf='countryChosen'></app-map>
     </div>
   </div>
