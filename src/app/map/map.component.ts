@@ -26,7 +26,6 @@ export class MapComponent implements OnInit{
   ngOnInit(){
 
 
-
     this.mymap = L.map('mapid').setView([-15,-47], 3);
 
     L.tileLayer(`https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=${environment.mapApiToken}`, {
@@ -39,14 +38,11 @@ export class MapComponent implements OnInit{
       accessToken: `${environment.mapApiToken}`
       }).addTo(this.mymap);
 
-
-
       this.statsService.countryLatLong
       .subscribe(
         countryData =>{
           this.lat = countryData.latitude;
           this.long = countryData.longitude;
-
 
             // get the information to fill the map
             // i have to call before i make the marker otherwise the market will be always 0!
@@ -55,6 +51,7 @@ export class MapComponent implements OnInit{
               this.confirmed = countryInfo.confirmed.value;
               this.recovered = countryInfo.recovered.value;
               this.deaths = countryInfo.deaths.value;
+
               L.marker([this.lat, this.long]).addTo(this.mymap)
               .bindPopup(`
               <h4>${countryData.name}</h4>

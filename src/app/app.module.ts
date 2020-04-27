@@ -9,13 +9,15 @@ import { CardsComponent } from './cards/cards.component';
 import { CountUpModule } from 'ngx-countup';
 import { ChartsModule } from 'ng2-charts';
 import { MapComponent } from './map/map.component';
+import { ChartComponent } from './chart/chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StatsComponent,
     CardsComponent,
-    MapComponent
+    MapComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,

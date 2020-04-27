@@ -13,6 +13,7 @@ export class StatsService{
 
   countryLatLong = new EventEmitter();
   countryInfo = new EventEmitter();
+  chartInfo = new EventEmitter();
 
   getGlobal(){
     return this.http.get<{confirmed,recovered,deaths, lastUpdate}>(BACKEND_URL);
@@ -23,7 +24,7 @@ export class StatsService{
   }
 
   getCountryInfo(countryName: String){
-      return this.http.get<{confirmed,recovered,deaths, lastUpdate}>(BACKEND_URL + "/countries/" + countryName)
+     return this.http.get<{confirmed,recovered,deaths, lastUpdate}>(BACKEND_URL + "/countries/" + countryName)
   }
 
   getLatLong(){

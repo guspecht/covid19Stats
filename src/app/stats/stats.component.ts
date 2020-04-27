@@ -13,32 +13,11 @@ export class StatsComponent implements OnInit {
 
   countryChosen;
 
-  public barChartOptions: ChartOptions = {
-    responsive: true,
-  };
-
-  public barChartLabels: Label[] = ['2020'];
-  public barChartType: ChartType = 'bar';
-  public barChartLegend = true;
-  public barChartPlugins = [];
-  public barChartColors: Color[] = [
-     {backgroundColor:'#007BFF'},
-     {backgroundColor:'#28A745'},
-     {backgroundColor:'#DC3545'}
-    ];
-
-  public barChartData: ChartDataSets[] = [
-    { data: [0], label: 'Confirmed' },
-    { data: [0], label: 'Recovered' },
-    { data: [0], label: 'Deaths' }
-  ];
-
   countries: [];
-
+  barChartData;
 
 
   constructor( private statsService: StatsService) { }
-
 
 
   ngOnInit(){
@@ -47,6 +26,8 @@ export class StatsComponent implements OnInit {
       // console.log(AllCountries.countries)
       this.countries = AllCountries.countries;
     })
+
+
   }
 
 
@@ -57,11 +38,7 @@ export class StatsComponent implements OnInit {
         this.countryChosen = countryData;
         this.statsService.countryInfo.emit(this.countryChosen);
 
-        this.barChartData = [
-          { data: [countryData.confirmed.value], label: 'Confirmed' },
-          { data: [countryData.recovered.value], label: 'Recovered' },
-          { data: [countryData.deaths.value], label: 'Deaths' }
-        ];
+
 
         this.statsService.getLatLong()
         .subscribe(data => {
@@ -69,6 +46,15 @@ export class StatsComponent implements OnInit {
             countryName = "Taiwan";
           }
           this.statsService.countryLatLong.emit(data.countries.find( country => country.name == countryName));
+
+             // get the information to fill the Chart
+            // i have to call here otherwise the chart will be always 0!
+          this.barChartData = [
+            { data: [countryData.confirmed.value], label: 'Confirmed' },
+            { data: [countryData.recovered.value], label: 'Recovered' },
+            { data: [countryData.deaths.value], label: 'Deaths' }
+          ];
+          this.statsService.chartInfo.emit(this.barChartData)
         })
 
       })
