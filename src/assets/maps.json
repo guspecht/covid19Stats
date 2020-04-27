@@ -249,7 +249,7 @@
       "iso2": "CI",
       "latitude": "7.539989",
       "longitude": "-5.54708",
-      "name": "Côte d'Ivoire"
+      "name": "Cote d'Ivoire"
   },
   {
       "iso2": "CK",
@@ -297,7 +297,7 @@
       "iso2": "CV",
       "latitude": "16.002082",
       "longitude": "-24.013197",
-      "name": "Cape Verde"
+      "name": "Cabo Verde"
   },
   {
       "iso2": "CX",
@@ -315,7 +315,7 @@
       "iso2": "CZ",
       "latitude": "49.817492",
       "longitude": "15.472962",
-      "name": "Czech Republic"
+      "name": "Czechia"
   },
   {
       "iso2": "DE",
@@ -549,7 +549,7 @@
       "iso2": "GZ",
       "latitude": "31.354676",
       "longitude": "34.308825",
-      "name": "Gaza Strip"
+      "name": "West Bank and Gaza"
   },
   {
       "iso2": "HK",
@@ -717,7 +717,7 @@
       "iso2": "KR",
       "latitude": "35.907757",
       "longitude": "127.766922",
-      "name": "South Korea"
+      "name": "Korea, South"
   },
   {
       "iso2": "KW",
@@ -843,7 +843,7 @@
       "iso2": "MK",
       "latitude": "41.608635",
       "longitude": "21.745275",
-      "name": "Macedonia [FYROM]"
+      "name": "North Macedonia"
   },
   {
       "iso2": "ML",
@@ -855,7 +855,7 @@
       "iso2": "MM",
       "latitude": "21.913965",
       "longitude": "95.956223",
-      "name": "Myanmar [Burma]"
+      "name": "Burma"
   },
   {
       "iso2": "MN",
@@ -1146,10 +1146,10 @@
       "name": "Solomon Islands"
   },
   {
-      "iso2": "SC",
-      "latitude": "-4.679574",
-      "longitude": "55.491977",
-      "name": "Seychelles"
+      "iso2": "SSD",
+      "latitude": "6.8770",
+      "longitude": "31.3070",
+      "name": "South Sudan"
   },
   {
       "iso2": "SD",
@@ -1227,7 +1227,7 @@
       "iso2": "ST",
       "latitude": "0.18636",
       "longitude": "6.613081",
-      "name": "São Tomé and Príncipe"
+      "name": "Sao Tome and Principe"
   },
   {
       "iso2": "SV",
@@ -1245,7 +1245,7 @@
       "iso2": "SZ",
       "latitude": "-26.522503",
       "longitude": "31.465866",
-      "name": "Swaziland"
+      "name": "Eswatini"
   },
   {
       "iso2": "TC",
@@ -1365,7 +1365,7 @@
       "iso2": "US",
       "latitude": "37.09024",
       "longitude": "-95.712891",
-      "name": "United States"
+      "name": "US"
   },
   {
       "iso2": "UY",
@@ -1383,7 +1383,7 @@
       "iso2": "VA",
       "latitude": "41.902916",
       "longitude": "12.453389",
-      "name": "Vatican City"
+      "name": "Holy See"
   },
   {
       "iso2": "VC",
@@ -1468,6 +1468,18 @@
       "latitude": "-19.015438",
       "longitude": "29.154857",
       "name": "Zimbabwe"
+  },
+  {
+      "iso2": "Cruise Ship",
+      "latitude": "-33.8462",
+      "longitude": "151.2489",
+      "name": "Diamond Princess"
+  },
+  {
+      "iso2": "Cruise Ship",
+      "latitude": "26.0971",
+      "longitude": "-79.04215",
+      "name": "MS Zaandam"
   }
 ]
 }
