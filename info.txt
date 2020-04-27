@@ -1,1 +1,3 @@
 https://covid19.mathdro.id/api
+
+transições quando troca de país e responsive pra pegar no mobile
