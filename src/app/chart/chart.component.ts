@@ -2,7 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 
 import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
-import { StatsService } from '../stats/stats.service';
+import { CountryService } from '../country/country.service';
 
 @Component({
   selector: 'app-chart',
@@ -31,13 +31,13 @@ export class ChartComponent implements OnInit {
     ];
 
 
-  constructor( private statsService: StatsService) {
+  constructor( private countryService: CountryService) {
   }
 
   ngOnInit() {
 
     // Subscribing to get the information
-    this.statsService.chartInfo
+    this.countryService.chartInfo
     .subscribe(charInformation => {
       this.barChartData = charInformation;
     })

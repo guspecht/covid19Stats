@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { StatsService } from './stats.service';
-
-import { ChartOptions, ChartType, ChartDataSets } from 'chart.js';
-import { Label, Color } from 'ng2-charts';
+import { CountryService } from './country.service';
 
 @Component({
-  selector: 'app-stats',
-  templateUrl: './stats.component.html',
-  styleUrls: ['./stats.component.css']
+  selector: 'app-country',
+  templateUrl: './country.component.html',
+  styleUrls: ['./country.component.css']
 })
-export class StatsComponent implements OnInit {
+export class CountryComponent implements OnInit {
 
   countryChosen;
 
@@ -17,11 +14,11 @@ export class StatsComponent implements OnInit {
   barChartData;
 
 
-  constructor( private statsService: StatsService) { }
+  constructor( private countryService: CountryService) { }
 
 
   ngOnInit(){
-    this.statsService.getCountries()
+    this.countryService.getCountries()
     .subscribe(AllCountries => {
       // console.log(AllCountries.countries)
       this.countries = AllCountries.countries;
@@ -33,19 +30,19 @@ export class StatsComponent implements OnInit {
 
   onChange(countryName:String){
     if(!(countryName === "choose")){
-      this.statsService.getCountryInfo(countryName)
+      this.countryService.getCountryInfo(countryName)
       .subscribe(countryData => {
         this.countryChosen = countryData;
-        this.statsService.countryInfo.emit(this.countryChosen);
+        this.countryService.countryInfo.emit(this.countryChosen);
 
 
 
-        this.statsService.getLatLong()
+        this.countryService.getLatLong()
         .subscribe(data => {
           if(countryName == "Taiwan*"){
             countryName = "Taiwan";
           }
-          this.statsService.countryLatLong.emit(data.countries.find( country => country.name == countryName));
+          this.countryService.countryLatLong.emit(data.countries.find( country => country.name == countryName));
 
              // get the information to fill the Chart
             // i have to call here otherwise the chart will be always 0!
@@ -54,7 +51,7 @@ export class StatsComponent implements OnInit {
             { data: [countryData.recovered.value], label: 'Recovered' },
             { data: [countryData.deaths.value], label: 'Deaths' }
           ];
-          this.statsService.chartInfo.emit(this.barChartData)
+          this.countryService.chartInfo.emit(this.barChartData)
         })
 
       })

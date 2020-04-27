@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StatsService } from '../stats/stats.service';
+import { CountryService } from '../country/country.service';
 
 @Component({
   selector: 'app-cards',
@@ -17,10 +17,10 @@ export class CardsComponent implements OnInit {
 
 
 
-  constructor(private statsService: StatsService) { }
+  constructor(private countryService: CountryService) { }
 
   ngOnInit(){
-      this.statsService.getGlobal()
+      this.countryService.getGlobal()
       .subscribe(globalStats => {
         this.confirmed = globalStats.confirmed.value;
         this.recovered = globalStats.recovered.value;

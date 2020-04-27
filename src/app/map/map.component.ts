@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import { environment } from 'src/environments/environment.prod';
-import { StatsService } from '../stats/stats.service';
+import { CountryService } from '../country/country.service';
 
 @Component({
   selector: 'app-map',
@@ -14,7 +14,7 @@ export class MapComponent implements OnInit{
 
   token = environment.mapApiToken;
   // https://account.mapbox.com/access-tokens/
-  constructor( private statsService: StatsService) { }
+  constructor( private countryService: CountryService) { }
 
   mymap;
   lat = 0;
@@ -38,7 +38,7 @@ export class MapComponent implements OnInit{
       accessToken: `${environment.mapApiToken}`
       }).addTo(this.mymap);
 
-      this.statsService.countryLatLong
+      this.countryService.countryLatLong
       .subscribe(
         countryData =>{
           this.lat = countryData.latitude;
@@ -46,7 +46,7 @@ export class MapComponent implements OnInit{
 
             // get the information to fill the map
             // i have to call before i make the marker otherwise the market will be always 0!
-            this.statsService.getCountryInfo(countryData.name)
+            this.countryService.getCountryInfo(countryData.name)
             .subscribe(countryInfo => {
               this.confirmed = countryInfo.confirmed.value;
               this.recovered = countryInfo.recovered.value;

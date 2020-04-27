@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StatsComponent } from './stats/stats.component';
-import { StatsService } from './stats/stats.service';
+import { CountryComponent } from './country/country.component';
+import { CountryService } from './country/country.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CardsComponent } from './cards/cards.component';
 import { CountUpModule } from 'ngx-countup';
@@ -14,7 +14,7 @@ import { ChartComponent } from './chart/chart.component';
 @NgModule({
   declarations: [
     AppComponent,
-    StatsComponent,
+    CountryComponent,
     CardsComponent,
     MapComponent,
     ChartComponent
@@ -25,7 +25,7 @@ import { ChartComponent } from './chart/chart.component';
     CountUpModule,
     ChartsModule
   ],
-  providers: [StatsService],
+  providers: [CountryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

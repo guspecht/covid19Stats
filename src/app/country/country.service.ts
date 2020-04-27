@@ -6,7 +6,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 const BACKEND_URL = environment.apiUrl;
 
 @Injectable()
-export class StatsService{
+export class CountryService{
   constructor( private http:HttpClient){}
   countries: [];
   country;
